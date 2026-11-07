@@ -1,0 +1,60 @@
+﻿Category,Quantity,References,Value,Stock Code,Unit Cost,Manufacturer,ROHS Compliant,Supplier
+Capacitors,1,C1,470pF,C1206C471J5GACTU,$6.19,KEMET,,Digikey
+Capacitors,4,"C2,C17-C18,C23",10nF,KV10,$1.70,Generic,,Tecneu
+Capacitors,1,C3,EEH-ZK1E471P,P121398TR-ND,$37.11,Panasonic,,Digikey
+Capacitors,1,C4,100n,AR2844,$4.00,Generic,,UNIT Electronics
+Capacitors,1,C5,470pF,IPACAP0030082,$3.00,Generic,,aelectronics
+Capacitors,2,C6-C7,0.1u,C.1-50,$3.00,Generic,,Steren
+Capacitors,1,C8,120u,CE120-16,$3.00,Generic,,Mexbit
+Capacitors,1,C9,100uF,E100-25R,$3.00,Generic,,Steren
+Capacitors,1,C10,4.7uF,ESK475M050AC3AA,$4.27,KEMET,,Digikey
+Capacitors,1,C13,47uF,E100-25R,$3.00,Generic,,Steren
+Capacitors,1,C15,1uF,399-15737-ND,$3.38,KEMET,,Digikey
+Capacitors,1,C16,270pF,IPACAP0030066,$1.50,Generic,,aelectronic's
+Capacitors,2,C19-C20,1nF,C0805C102K5HACAUTO,$3.57,KEMET,,Digikey
+Capacitors,1,C21,1uF,399-15737-ND,$3.38,KEMEY,,Digikey
+Capacitors,1,C22,500pF,08052C501MAT2A,$7.81,KYOCERA AVX,,Mouser
+Resistors,3,"R1,R8,R11",4k,RN73R2BTTD4001B25,$7.90,KOA,,Newark
+Resistors,1,R2,560,R560 1/2,$1.00,Generic,,Steren
+Resistors,3,"R3,R9,R12",8.2M,Z1/2W8.2M,$0.60,NTE,,Electronica Universal
+Resistors,1,R5,10k,M4K7,$2.00,Maplin,,Maplin
+Resistors,1,R6,1k,P1.0KACT-ND,$1.86,Panasonic - ECG,,Digikey
+Resistors,1,R7,1k8,RC-1K8/1/2,$1.00,HSR,,AG Electronica
+Resistors,3,"R10,R13,R36",450k,MFR50SFBF52-450K-ND,$0.22,Yageo,,Digikey
+Resistors,3,"R14,R32,R34",220,MFR-25FTF52-220R,$1.86,Yageo,,Digikey
+Resistors,1,R15,1k,MFR-25FTF52-1K,$1.86,Yageo,,Digikey
+Resistors,1,R16,22,MFR-25FBF52-22R,$2.04,Yageo,,Digikey
+Resistors,1,R17,10,R10 1/2,$1.00,Generic,,Steren
+Resistors,1,R18,9k,1W9K1,$2.00,Generic,,MV Electronica
+Resistors,1,R19,2k,20010603010B,$0.50,ROHM,,Intesc
+Resistors,1,R20,0.22,MFR-25FTF52-0R22,$5.38,Yageo,,Digikey
+Resistors,2,R21-R22,50k,RP-50K,$2.00,HSR,,AG Electronica
+Resistors,1,R23,10k,10020603010B,$0.50,ROHM,,Intesc
+Resistors,4,"R24,R29-R31",2.2M,ESR10EZPF2204,$2.00,ROHM,,Newark
+Resistors,1,R25,18.5k,MFP50SBRD52-18K5,$3.15,Yageo,,Digikey
+Resistors,2,"R26,R28",20k,MFR-25FTF52-20K,$2.04,Yageo,,Digikey
+Resistors,1,R27,200k,20030402010A,$0.50,Generic,,Intesc
+Resistors,1,R33,60k,13-MFP50SBRD52-60KTR-ND,$12.62,Yageo,,Digikey
+Resistors,1,R35,1.2k,MFR-25FBF52-22R,$1.86,Yageo,,Deigikey
+Resistors,1,R37,2.2,RC-2K2/1/4,$1.00,HSR,,AG Electronica
+Integrated Circuits,1,U1,PC817,AR1819,$3.00,SHARP,,UNIT Electronics
+Integrated Circuits,1,U2,UC3843AN,UC3843AN,$33.00,Texas Instruments,,Digikey
+Integrated Circuits,1,U3,MC34063A,MC34063,$124.80,Texas Instruments,,Electronica Universal
+Integrated Circuits,2,"U4,U8",PDQ2D48S12S,PDQ2-D48-S12-S,$19.56,CUI_Inc.,,onlinecomponents.com
+Integrated Circuits,3,U5-U7,AQV258H5A,AQV258H5A,$281.57,PANASONIC,,Newark
+Integrated Circuits,1,U9,STM32F411RC,STM32F411RCT7TR,$148.42,STMicroelectronics,,STMicroelectronics
+Transistors,6,"Q1-Q5,Q7",STW4N150,STW4N150,$168.94,STMICROELECTRONICS,,Newark
+Transistors,1,Q6,IRF840,IRF840PBF,$2.06,Kechengwei,,AliExpress
+Diodes,4,"D1,D5-D6,D8",R3000F,583-R3000F,$18.77,Rectron,,Mouser
+Diodes,1,D2,SMBJ12A,SMBJ12ALFTR-ND,$9.09,Littelfuse Inc,,Digikey
+Diodes,1,D3,B340B-13,B340BDITR-ND,$11.00,Diodes Inc.,,Digikey
+Diodes,1,D4,10BQ040,32D-80SQ045NRLG,$12.39,onsemi,,ALLELCO
+Diodes,1,D7,UF4007GTA,32D-UF4006-E3/54,$1.73,Vishay General Semiconductor,,ALLELCO
+Diodes,1,D9,Power_On,732-5006-ND,$3.15,Wurth Elektronik,,Digikey
+Miscellaneous,1,F1,1A,0459001.ER,$39.89,Littelfuse,,Mouser
+Miscellaneous,1,J1,5444262,651-5444262,$9.28,Phoenix Contact,,Mouser
+Miscellaneous,2,J2-J3,CONN-SIL6,732-5319-ND,$6.12,Wurth Elektronik,,Digikey
+Miscellaneous,1,L1,330uH,AR3333,$13.00,Sumida,,UNIT Electronics
+Miscellaneous,1,L2,6uH,80AK2916,$131.40,TDK,,Newark
+Miscellaneous,5,TP1-TP5,CONN-SIL1,,,,,
+Miscellaneous,1,TR3,FL3209-5LD,FL3209-5LD,$123.00,Coilcraft Inc,,Coilcraft Inc

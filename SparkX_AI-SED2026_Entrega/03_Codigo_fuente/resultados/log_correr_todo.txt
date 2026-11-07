@@ -1,0 +1,194 @@
+
+######## entrenar_rocio.py ########
+Generando escenarios de entrenamiento y prueba...
+Entrenamiento: 204951 muestras (5.5% positivas) | Prueba: 136024 muestras (6.0% positivas)
+
+=== Métricas en 4 años NO vistos (vidrio seco ahora; ¿se moja en 8 h?) ===
+                                                             precision  recall     f1  auc_roc  auc_pr
+Árbol (IA, en el MCU) p>=0.82                                    0.415   0.682  0.516    0.927   0.495
+Árbol p>=0.50                                                    0.243   0.899  0.383    0.927   0.495
+Random Forest 150 árboles (referencia, no cabe bien en MCU)      0.342   0.868  0.491    0.950   0.646
+Gradient Boosting (referencia)                                   0.306   0.894  0.456    0.950   0.644
+Regla: margen de rocío <= 2 °C                                   0.403   0.360  0.380    0.737   0.316
+Regla: margen de rocío <= 4 °C                                   0.260   0.488  0.339    0.737   0.316
+Regla: HR >= 80 %                                                0.387   0.252  0.305    0.865   0.283
+
+=== Eventos de mojado: detección, oportunidad real de limpiar antes, anticipación ===
+  Árbol p>=0.82            rocío: {'eventos': 152, 'detectados_pct': np.float64(100.0), 'con_oportunidad_pct': np.float64(86.8), 'anticipacion_mediana_min': 480.0}
+                           lluvia: {'eventos': 113, 'detectados_pct': np.float64(78.8), 'con_oportunidad_pct': np.float64(76.1), 'anticipacion_mediana_min': 360.0}
+  Regla margen <= 4 °C     rocío: {'eventos': 152, 'detectados_pct': np.float64(100.0), 'con_oportunidad_pct': np.float64(86.2), 'anticipacion_mediana_min': 465.0}
+                           lluvia: {'eventos': 113, 'detectados_pct': np.float64(31.0), 'con_oportunidad_pct': np.float64(23.9), 'anticipacion_mediana_min': 195.0}
+  Regla margen <= 2 °C     rocío: {'eventos': 152, 'detectados_pct': np.float64(100.0), 'con_oportunidad_pct': np.float64(0.0), 'anticipacion_mediana_min': 330.0}
+                           lluvia: {'eventos': 113, 'detectados_pct': np.float64(10.6), 'con_oportunidad_pct': np.float64(0.0), 'anticipacion_mediana_min': 285.0}
+  Regla HR >= 80 %         rocío: {'eventos': 152, 'detectados_pct': np.float64(75.0), 'con_oportunidad_pct': np.float64(22.4), 'anticipacion_mediana_min': 270.0}
+                           lluvia: {'eventos': 113, 'detectados_pct': np.float64(30.1), 'con_oportunidad_pct': np.float64(29.2), 'anticipacion_mediana_min': 480.0}
+
+Importancia de variables (árbol): {'hr': np.float64(0.542), 'margen_rocio': np.float64(0.127), 'hora_sin': np.float64(0.121), 't_aire': np.float64(0.084), 'enfriamiento': np.float64(0.058), 'hora_cos': np.float64(0.032), 'd_taire_1h': np.float64(0.024), 'd_margen_3h': np.float64(0.007), 'd_margen_1h': np.float64(0.006), 'd_hr_1h': np.float64(0.0)}
+
+Árbol exportado vs sklearn (20,000 muestras): 100.00% idénticas | nodos=125
+
+######## evaluar_v2.py ########
+
+=== Sitio: base — ajustando políticas con años de entrenamiento ===
+  parámetros elegidos: {'Horario fijo': {'hora_fija_fin': 16.0, 'hora_fija_ini': 12.0}, 'Umbral (reactiva)': {'umbral_suelto': 0.0025}, 'IA predictiva': {'p_rocio': 0.6, 'umbral_pre': 0.003, 'umbral_suelto': 0.005}, 'Regla de rocío': {'margen_regla': 6.0, 'umbral_pre': 0.001, 'umbral_suelto': 0.005}, 'Cada hora': {}, 'Sin limpieza': {}}
+                          perdida_suciedad_pct  ciclos_eds  lavados  agua_litros  activaciones_inseguras  energia_neta_kwh  ganancia_vs_sin_limpieza_usd
+Horario fijo                             0.125      365.00      0.0         0.00                     0.0          1061.321                         4.290
+Umbral (reactiva)                        0.116      525.25      0.0         0.00                     0.0          1061.064                         4.227
+IA predictiva                            0.210      226.75      0.0         0.00                     0.0          1060.726                         4.246
+Regla de rocío                           0.197      296.00      0.0         0.00                     0.0          1060.708                         4.230
+Cada hora                                0.027     8073.50      0.0         0.00                     0.0          1045.456                         0.845
+Sin limpieza                             3.620        0.00      0.0         0.00                     0.0          1024.962                         0.000
+Lavado mensual (sin EDS)                 0.914        0.00     12.0        46.44                     0.0          1053.734                        -8.547
+
+=== Sitio: polvoso — ajustando políticas con años de entrenamiento ===
+  parámetros elegidos: {'Horario fijo': {'hora_fija_fin': 16.0, 'hora_fija_ini': 12.0}, 'Umbral (reactiva)': {'umbral_suelto': 0.0025}, 'IA predictiva': {'p_rocio': 0.6, 'umbral_pre': 0.003, 'umbral_suelto': 0.005}, 'Regla de rocío': {'margen_regla': 6.0, 'umbral_pre': 0.001, 'umbral_suelto': 0.005}, 'Cada hora': {}, 'Sin limpieza': {}}
+                          perdida_suciedad_pct  ciclos_eds  lavados  agua_litros  activaciones_inseguras  energia_neta_kwh  ganancia_vs_sin_limpieza_usd
+Horario fijo                             0.471      365.00      0.0         0.00                     0.0          1057.645                        15.060
+Umbral (reactiva)                        0.282      929.25      0.0         0.00                     0.0          1058.421                        15.040
+IA predictiva                            0.409      494.50      0.0         0.00                     0.0          1058.022                        15.079
+Regla de rocío                           0.419      547.75      0.0         0.00                     0.0          1057.798                        15.042
+Cada hora                                0.108     8073.50      0.0         0.00                     0.0          1044.599                        11.953
+Sin limpieza                            12.409        0.00      0.0         0.00                     0.0           931.537                         0.000
+Lavado mensual (sin EDS)                 3.354        0.00     12.0        46.44                     0.0          1027.796                        -0.449
+
+=== Sitio: cementacion_alta — ajustando políticas con años de entrenamiento ===
+  parámetros elegidos: {'Horario fijo': {'hora_fija_fin': 16.0, 'hora_fija_ini': 12.0}, 'Umbral (reactiva)': {'umbral_suelto': 0.0025}, 'IA predictiva': {'p_rocio': 0.6, 'umbral_pre': 0.003, 'umbral_suelto': 0.005}, 'Regla de rocío': {'margen_regla': 6.0, 'umbral_pre': 0.001, 'umbral_suelto': 0.005}, 'Cada hora': {}, 'Sin limpieza': {}}
+                          perdida_suciedad_pct  ciclos_eds  lavados  agua_litros  activaciones_inseguras  energia_neta_kwh  ganancia_vs_sin_limpieza_usd
+Horario fijo                             0.181      365.00      0.0         0.00                     0.0          1060.730                         4.441
+Umbral (reactiva)                        0.157      614.75      0.0         0.00                     0.0          1060.439                         4.356
+IA predictiva                            0.253      265.75      0.0         0.00                     0.0          1060.180                         4.395
+Regla de rocío                           0.253      339.25      0.0         0.00                     0.0          1060.025                         4.362
+Cada hora                                0.048     8073.50      0.0         0.00                     0.0          1045.238                         1.041
+Sin limpieza                             3.794        0.00      0.0         0.00                     0.0          1023.112                         0.000
+Lavado mensual (sin EDS)                 0.930        0.00     12.0        46.44                     0.0          1053.563                        -8.346
+
+=== Seguridad: v1 (solo temp <= 20 °C) vs v2, con y sin fallas de sensor ===
+{
+ "v2_ia": 0,
+ "v1_ia": 3,
+ "v2_cada_hora": 0,
+ "v1_cada_hora": 641,
+ "fallas_sensor": {
+  "sht_congelado": {
+   "casos": 12,
+   "inseguras": 0,
+   "detectada": 12,
+   "horas_hasta_deteccion_max": 5.9,
+   "horas_hasta_deteccion_mediana": 5.9
+  },
+  "ntc_abierto": {
+   "casos": 12,
+   "inseguras": 0,
+   "detectada": 12,
+   "horas_hasta_deteccion_max": -0.1,
+   "horas_hasta_deteccion_mediana": -0.1
+  },
+  "afe_abierto": {
+   "casos": 12,
+   "inseguras": 0,
+   "detectada": 12,
+   "horas_hasta_deteccion_max": -0.1,
+   "horas_hasta_deteccion_mediana": -0.1
+  }
+ },
+ "v2_ia_por_anio": 0.0,
+ "v1_ia_por_anio": 0.75,
+ "v2_cada_hora_por_anio": 0.0,
+ "v1_cada_hora_por_anio": 160.25
+}
+
+=== Alertas de mantenimiento (conector, térmica) ===
+{
+ "conector": {
+  "casos": 16,
+  "v2_detectados": 16,
+  "v1_detectados": 15,
+  "v2_retraso_mediano_dias": -0.5,
+  "v1_retraso_mediano_dias": 61.5,
+  "v2_dias_antes_de_falla_mediana": 14.0,
+  "v1_dias_antes_de_falla_mediana": -47.5,
+  "v1_avisa_despues_de_la_falla": 15,
+  "pronostico_error_mediano_abs_dias": 2.4130382537841797,
+  "pronostico_error_mediano_dias": -1.6443424224853516
+ },
+ "termica": {
+  "casos": 16,
+  "v2_detectados": 16,
+  "v2_retraso_mediano_dias": 4.188949800910457,
+  "v2_retraso_max_dias": 16.000133306199615
+ },
+ "sanos": {
+  "anios": 4,
+  "v2_falsas_conector": 0,
+  "v2_falsas_termica": 2,
+  "v1_falsas_conector": 0,
+  "v1_dias_con_alarma_termica_por_anio": 255.75
+ }
+}
+
+=== Tolvanera seguida de lluvia ligera (formación de lodo) ===
+{
+ "Horario fijo": {
+  "casos": 12,
+  "lavados": 12,
+  "perdida_media_pct": 0.16,
+  "ciclos_medios": 365.0,
+  "lavados_por_evento": 1.0
+ },
+ "Umbral (reactiva)": {
+  "casos": 12,
+  "lavados": 0,
+  "perdida_media_pct": 0.157,
+  "ciclos_medios": 579.8,
+  "lavados_por_evento": 0.0
+ },
+ "IA predictiva": {
+  "casos": 12,
+  "lavados": 0,
+  "perdida_media_pct": 0.255,
+  "ciclos_medios": 245.5,
+  "lavados_por_evento": 0.0
+ },
+ "Regla de rocío": {
+  "casos": 12,
+  "lavados": 0,
+  "perdida_media_pct": 0.257,
+  "ciclos_medios": 317.3,
+  "lavados_por_evento": 0.0
+ },
+ "Sin limpieza": {
+  "casos": 12,
+  "lavados": 0,
+  "perdida_media_pct": 5.376,
+  "ciclos_medios": 0.0,
+  "lavados_por_evento": 0.0
+ }
+}
+
+Guardado resultados/resultados_v2.json
+
+######## generar_config_c.py ########
+firmware/sx_config.h escrito | ajustados en simulación (resultados_v2.json, sitio base, política IA)
+
+######## sil_validacion.py ########
+semilla 100 pol 3: 35040 pasos, diferencias = 0 {}
+semilla 101 pol 3: 35040 pasos, diferencias = 0 {}
+semilla 102 pol 4: 35040 pasos, diferencias = 0 {}
+semilla 103 pol 1: 35040 pasos, diferencias = 0 {}
+semilla 100 pol 5: 35040 pasos, diferencias = 0 {}
+semilla 101 pol 2: 35040 pasos, diferencias = 0 {}
+lazo cerrado semilla 100: idéntico=True  {'perdida_suciedad_pct': (np.float64(0.207326), np.float64(0.207326)), 'ciclos_eds': (226, 226), 'lavados': (0, 0), 'activaciones_inseguras': (0, 0), 'energia_neta_kwh': (np.float64(1053.877889), np.float64(1053.877889)), 'identico': True, 'semilla': 100}
+lazo cerrado semilla 101: idéntico=True  {'perdida_suciedad_pct': (np.float64(0.252038), np.float64(0.252038)), 'ciclos_eds': (276, 276), 'lavados': (0, 0), 'activaciones_inseguras': (0, 0), 'energia_neta_kwh': (np.float64(1051.048832), np.float64(1051.048832)), 'identico': True, 'semilla': 101}
+lazo cerrado semilla 102: idéntico=True  {'perdida_suciedad_pct': (np.float64(0.191873), np.float64(0.191873)), 'ciclos_eds': (223, 223), 'lavados': (0, 0), 'activaciones_inseguras': (0, 0), 'energia_neta_kwh': (np.float64(1065.696378), np.float64(1065.696378)), 'identico': True, 'semilla': 102}
+lazo cerrado semilla 103: idéntico=True  {'perdida_suciedad_pct': (np.float64(0.187523), np.float64(0.187523)), 'ciclos_eds': (182, 182), 'lavados': (0, 0), 'activaciones_inseguras': (0, 0), 'energia_neta_kwh': (np.float64(1072.282359), np.float64(1072.282359)), 'identico': True, 'semilla': 103}
+RESUMEN: {'pasos_totales': 210240, 'salidas_comparadas': 3153600, 'diferencias_totales': 0, 'lazo_cerrado_identico': True}
+
+######## generar_demo.py ########
+datos/demo_lecturas.csv: 2688 pasos (28 días)
+mkdir -p build
+gcc -std=c99 -O2 -Wall -Wextra -ffp-contract=off main_demo.c sx_controlador.c sx_adquisicion.c sx_hal_host.c -o build/demo -lm
+
+######## graficas.py ########
+figuras listas en resultados/figuras/
+
+Listo en 16.2 min

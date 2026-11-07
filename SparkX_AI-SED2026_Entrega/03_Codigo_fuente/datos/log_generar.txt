@@ -1,0 +1,8 @@
+/home/claude/sparkx_red/datos/red_nodo1.csv: 2688 pasos
+/home/claude/sparkx_red/datos/red_nodo2.csv: 2688 pasos
+/home/claude/sparkx_red/datos/red_nodo3.csv: 2688 pasos
+/home/claude/sparkx_red/datos/red_nodo4.csv: 2688 pasos
+/home/claude/sparkx_red/datos/red_nodo5.csv: 2688 pasos
+/home/claude/sparkx_red/datos/red_nodo6.csv: 2688 pasos
+/home/claude/sparkx_red/datos/red_nodo99.csv: 2688 pasos
+firmware/sx_demo_datos.h listo

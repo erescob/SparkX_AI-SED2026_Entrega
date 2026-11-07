@@ -1,0 +1,20 @@
+Forcing full zone regeneration...
+Zone renders complete.
+Task 1 of 4: PDF Image
+Generating image: I:/Proteus/AI_SED2026/PROYECTO/SISTEMA_PCB/SISTEMA_PCB/.ojm-staging-0e70bf6299974da6925aae86848ad521/PDF Image.pdf
+Image created: I:/Proteus/AI_SED2026/PROYECTO/SISTEMA_PCB/SISTEMA_PCB/.ojm-staging-0e70bf6299974da6925aae86848ad521/PDF Image.pdf
+Completed: PDF Image (1 files)
+Task 2 of 4: Bill of Materials
+Using default BOM template: Default
+Generating CSV output: I:/Proteus/AI_SED2026/PROYECTO/SISTEMA_PCB/SISTEMA_PCB/.ojm-staging-0e70bf6299974da6925aae86848ad521/Bill of Materials.csv
+CSV output generated successfully
+Completed: Bill of Materials (1 files)
+Task 3 of 4: Schematic PDF
+Generating image: I:/Proteus/AI_SED2026/PROYECTO/SISTEMA_PCB/SISTEMA_PCB/.ojm-staging-0e70bf6299974da6925aae86848ad521/Schematic PDF.pdf
+Image created: I:/Proteus/AI_SED2026/PROYECTO/SISTEMA_PCB/SISTEMA_PCB/.ojm-staging-0e70bf6299974da6925aae86848ad521/Schematic PDF.pdf
+Completed: Schematic PDF (1 files)
+Task 4 of 4: Pick and Place
+Generating Pick and Place: I:/Proteus/AI_SED2026/PROYECTO/SISTEMA_PCB/SISTEMA_PCB/.ojm-staging-0e70bf6299974da6925aae86848ad521/Pick and Place.csv
+Pick and Place created: I:/Proteus/AI_SED2026/PROYECTO/SISTEMA_PCB/SISTEMA_PCB/.ojm-staging-0e70bf6299974da6925aae86848ad521/Pick and Place.csv
+Completed: Pick and Place (1 files)
+Manifest written to: I:/Proteus/AI_SED2026/PROYECTO/SISTEMA_PCB/SISTEMA_PCB/.ojm-staging-0e70bf6299974da6925aae86848ad521/SISTEMA_PCB.manifest.md

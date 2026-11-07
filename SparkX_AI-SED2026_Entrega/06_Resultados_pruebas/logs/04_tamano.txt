@@ -1,0 +1,12 @@
+STM32F411RC: 256 KB flash (128 KB para el programa, 128 KB de configuración), 128 KB RAM
+   text	   data	    bss	    dec	    hex	filename
+  47472	    464	   9392	  57328	   dff0	build/sparkx_nodo.elf
+  sx_hal_stm32.c         flash   2537 B   RAM   5480 B
+  startup_stm32f411.c    flash    196 B   RAM      4 B
+  main.c                 flash     28 B   RAM   3584 B
+  sx_controlador.c       flash   5884 B   RAM      0 B
+  sx_adquisicion.c       flash    816 B   RAM      0 B
+  sx_eds.c               flash    488 B   RAM      0 B
+  sx_red.c               flash    924 B   RAM      0 B
+  sx_uart1h.c            flash    718 B   RAM      0 B
+  sx_nodo.c              flash   7670 B   RAM      0 B

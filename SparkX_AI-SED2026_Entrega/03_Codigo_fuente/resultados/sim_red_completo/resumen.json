@@ -1,0 +1,14 @@
+{
+ "hardware": "completo (v2)",
+ "pasos": 2688, "paso_ms": 8000, "tarjetas": 6,
+ "max_limpiezas_simultaneas": 1, "ms_con_mas_de_1": 0,
+ "ticks_totales": 826368000, "ticks_simulados_bit_a_bit": 74226019,
+ "nodos": [
+  {"id":1,"alerta_eds":0,"limpiezas":7,"abortadas":0,"sin_turno":0,"inicios_eds":12,"ms_eds_con_agua":0,"eds_con_ambiente_viejo":0,"saltos":0,"padre":255,"tramas_ok":7599,"crc_malo":0,"colisiones":0,"err_marco":0,"reenviadas":0,"alerta_conector":0,"alerta_termica":0,"alerta_lavado":0,"falla_sensor":0},
+  {"id":2,"alerta_eds":1,"limpiezas":12,"abortadas":0,"sin_turno":0,"inicios_eds":12,"ms_eds_con_agua":0,"eds_con_ambiente_viejo":0,"saltos":3,"padre":2,"tramas_ok":8682,"crc_malo":0,"colisiones":0,"err_marco":0,"reenviadas":7507,"alerta_conector":0,"alerta_termica":0,"alerta_lavado":0,"falla_sensor":0},
+  {"id":3,"alerta_eds":0,"limpiezas":9,"abortadas":0,"sin_turno":0,"inicios_eds":9,"ms_eds_con_agua":0,"eds_con_ambiente_viejo":0,"saltos":4,"padre":2,"tramas_ok":5562,"crc_malo":0,"colisiones":1,"err_marco":1,"reenviadas":4368,"alerta_conector":1,"alerta_termica":0,"alerta_lavado":0,"falla_sensor":0},
+  {"id":4,"alerta_eds":0,"limpiezas":12,"abortadas":0,"sin_turno":0,"inicios_eds":12,"ms_eds_con_agua":0,"eds_con_ambiente_viejo":0,"saltos":1,"padre":0,"tramas_ok":8859,"crc_malo":0,"colisiones":0,"err_marco":0,"reenviadas":7282,"alerta_conector":0,"alerta_termica":1,"alerta_lavado":0,"falla_sensor":0},
+  {"id":5,"alerta_eds":0,"limpiezas":13,"abortadas":0,"sin_turno":0,"inicios_eds":13,"ms_eds_con_agua":0,"eds_con_ambiente_viejo":0,"saltos":2,"padre":3,"tramas_ok":9352,"crc_malo":0,"colisiones":0,"err_marco":0,"reenviadas":6157,"alerta_conector":0,"alerta_termica":0,"alerta_lavado":0,"falla_sensor":0},
+  {"id":6,"alerta_eds":0,"limpiezas":11,"abortadas":0,"sin_turno":0,"inicios_eds":11,"ms_eds_con_agua":0,"eds_con_ambiente_viejo":0,"saltos":3,"padre":3,"tramas_ok":5584,"crc_malo":0,"colisiones":0,"err_marco":0,"reenviadas":3914,"alerta_conector":0,"alerta_termica":0,"alerta_lavado":0,"falla_sensor":0}
+ ]
+}

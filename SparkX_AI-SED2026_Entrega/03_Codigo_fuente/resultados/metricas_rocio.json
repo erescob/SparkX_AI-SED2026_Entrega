@@ -1,0 +1,155 @@
+{
+ "umbral_arbol": 0.825,
+ "metricas": {
+  "Árbol (IA, en el MCU) p>=0.82": {
+   "precision": 0.415,
+   "recall": 0.682,
+   "f1": 0.516,
+   "auc_roc": 0.927,
+   "auc_pr": 0.495
+  },
+  "Árbol p>=0.50": {
+   "precision": 0.243,
+   "recall": 0.899,
+   "f1": 0.383,
+   "auc_roc": 0.927,
+   "auc_pr": 0.495
+  },
+  "Random Forest 150 árboles (referencia, no cabe bien en MCU)": {
+   "precision": 0.342,
+   "recall": 0.868,
+   "f1": 0.491,
+   "auc_roc": 0.95,
+   "auc_pr": 0.646
+  },
+  "Gradient Boosting (referencia)": {
+   "precision": 0.306,
+   "recall": 0.894,
+   "f1": 0.456,
+   "auc_roc": 0.95,
+   "auc_pr": 0.644
+  },
+  "Regla: margen de rocío <= 2 °C": {
+   "precision": 0.403,
+   "recall": 0.36,
+   "f1": 0.38,
+   "auc_roc": 0.737,
+   "auc_pr": 0.316
+  },
+  "Regla: margen de rocío <= 4 °C": {
+   "precision": 0.26,
+   "recall": 0.488,
+   "f1": 0.339,
+   "auc_roc": 0.737,
+   "auc_pr": 0.316
+  },
+  "Regla: HR >= 80 %": {
+   "precision": 0.387,
+   "recall": 0.252,
+   "f1": 0.305,
+   "auc_roc": 0.865,
+   "auc_pr": 0.283
+  }
+ },
+ "anticipacion": {
+  "Árbol p>=0.82": {
+   "todos": {
+    "eventos": 265,
+    "detectados_pct": 90.9,
+    "con_oportunidad_pct": 82.3,
+    "anticipacion_mediana_min": 480.0
+   },
+   "rocio": {
+    "eventos": 152,
+    "detectados_pct": 100.0,
+    "con_oportunidad_pct": 86.8,
+    "anticipacion_mediana_min": 480.0
+   },
+   "lluvia": {
+    "eventos": 113,
+    "detectados_pct": 78.8,
+    "con_oportunidad_pct": 76.1,
+    "anticipacion_mediana_min": 360.0
+   }
+  },
+  "Regla margen <= 4 °C": {
+   "todos": {
+    "eventos": 265,
+    "detectados_pct": 70.6,
+    "con_oportunidad_pct": 59.6,
+    "anticipacion_mediana_min": 450.0
+   },
+   "rocio": {
+    "eventos": 152,
+    "detectados_pct": 100.0,
+    "con_oportunidad_pct": 86.2,
+    "anticipacion_mediana_min": 465.0
+   },
+   "lluvia": {
+    "eventos": 113,
+    "detectados_pct": 31.0,
+    "con_oportunidad_pct": 23.9,
+    "anticipacion_mediana_min": 195.0
+   }
+  },
+  "Regla margen <= 2 °C": {
+   "todos": {
+    "eventos": 265,
+    "detectados_pct": 61.9,
+    "con_oportunidad_pct": 0.0,
+    "anticipacion_mediana_min": 330.0
+   },
+   "rocio": {
+    "eventos": 152,
+    "detectados_pct": 100.0,
+    "con_oportunidad_pct": 0.0,
+    "anticipacion_mediana_min": 330.0
+   },
+   "lluvia": {
+    "eventos": 113,
+    "detectados_pct": 10.6,
+    "con_oportunidad_pct": 0.0,
+    "anticipacion_mediana_min": 285.0
+   }
+  },
+  "Regla HR >= 80 %": {
+   "todos": {
+    "eventos": 265,
+    "detectados_pct": 55.8,
+    "con_oportunidad_pct": 25.3,
+    "anticipacion_mediana_min": 330.0
+   },
+   "rocio": {
+    "eventos": 152,
+    "detectados_pct": 75.0,
+    "con_oportunidad_pct": 22.4,
+    "anticipacion_mediana_min": 270.0
+   },
+   "lluvia": {
+    "eventos": 113,
+    "detectados_pct": 30.1,
+    "con_oportunidad_pct": 29.2,
+    "anticipacion_mediana_min": 480.0
+   }
+  }
+ },
+ "importancias": {
+  "hr": 0.542,
+  "margen_rocio": 0.127,
+  "hora_sin": 0.121,
+  "t_aire": 0.084,
+  "enfriamiento": 0.058,
+  "hora_cos": 0.032,
+  "d_taire_1h": 0.024,
+  "d_margen_3h": 0.007,
+  "d_margen_1h": 0.006,
+  "d_hr_1h": 0.0
+ },
+ "n_entrenamiento": 204951,
+ "n_prueba": 136024,
+ "positivos_entrenamiento_pct": 5.49,
+ "positivos_prueba_pct": 6.05,
+ "profundidad": 6,
+ "hojas": 63,
+ "exportado_identico_pct": 100.0
+}

@@ -1,0 +1,57 @@
+SPARK X - SIMULACION DEL FIRMWARE CON IA EN PROTEUS
+====================================================
+Probado con Proteus Professional 9.2 SP1. El STM32F411RC (el micro de la PCB, U9) SI tiene
+modelo de simulacion: aparece en Pick Devices (biblioteca CM4_STM32). El asistente
+"Create Firmware Project" no lo muestra, pero ese asistente no se usa aqui.
+
+ARCHIVOS (carpeta 04_Firmware_compilado)
+  demo_Proteus_STM32F411RC\demo_nodo1.hex   -> U1, coordinador (nodo 1)
+  demo_Proteus_STM32F411RC\demo_nodo2.hex   -> U2, nodo 2
+  demo_Proteus_STM32F401RC\                 -> lo mismo para el STM32F401RC (respaldo)
+  El modelo de IA (arbol de 125 nodos) va DENTRO de cada .hex; no hay que instalar
+  nada mas. verificar_hex.py comprueba que es el modelo entrenado.
+
+1. PROYECTO
+   File > New Project. Schematic: DEFAULT. PCB: "Do not create a PCB layout".
+   Firmware: "No Firmware Project" (el firmware ya viene compilado en el .hex).
+
+2. MICROCONTROLADORES
+   Tecla P > escribir STM32F411RC > doble clic en el resultado > OK.
+   Colocar dos: U1 y U2.
+   Doble clic en U1 > Program File > demo_nodo1.hex. External Crystal Frequency: 8M.
+   Doble clic en U2 > Program File > demo_nodo2.hex.
+
+3. CONEXIONES
+   Terminal virtual 1 (Virtual Instruments Mode > VIRTUAL TERMINAL):
+       RXD <- U1 PA9     TXD -> U1 PA10     115200, 8, NONE, 1
+   Terminal virtual 2:  RXD <- U2 PA9        115200, 8, NONE, 1
+   Enlace de 1 hilo:    U1 PB13 (RIGHT_PANEL) <-> U2 PC10 (LEFT_PANEL)
+                        + resistencia de 4.7k de ese cable a VDD (terminal POWER)
+   Osciloscopio:        A = U1 PB4 (ON/OFF_FLYBACK)
+                        B, C, D = U1 PA2, PA3, PA4 (PHASE_A, B, C)
+   (Ver proteus_banco_cableado.png)
+
+4. CORRER (boton Play). Si no aparece la terminal: Debug > Virtual Terminal.
+
+QUE DEBE VERSE (1 paso de 15 min = 4 s de simulacion)
+   0 s     encabezado "=== Spark-X red | nodo 1 (COORDINADOR) ..." y una linea "amb" cada 4 s
+   0-16 s  "est" con "at":"BLOQUEADA","bits":64  (comprueba 1 h de vidrio seco)
+   ~28 s   la IA llega a "p_rocio":0.61 (umbral 0.60) -> "turno" n=1 y n=2 -> "fin" rc=0
+           En el osciloscopio: PB4 sube y PA2-PA4 conmutan a 50 Hz unos 2 s.
+           ESTA ES LA LIMPIEZA ANTES DEL ROCIO (9.5 h antes del agua).
+   104 s   margen < 4 C -> "bits":64; despues "bits":66 (margen < 2 C). Sin turnos.
+   180-224 s  agua en el vidrio (rocio). La alta tension sigue bloqueada.
+   240 s   vidrio seco -> limpieza diaria ("turno"/"fin").
+   La salida completa esperada esta en terminal_esperada\ (obtenida con el mismo
+   firmware compilado para PC; los numeros del nodo 2 pueden variar en decimales).
+
+COMANDOS (escribirlos en la terminal 1)
+   RED          topologia de la red
+   MAXSIM 1     limpiezas simultaneas permitidas
+   LAVADO 2     registra un lavado manual del panel 2
+
+NOTAS
+ - Con pasos de 4 s solo alcanzan turno las tarjetas a 1 salto del coordinador:
+   usar tarjetas vecinas. En operacion real (pasos de 15 min) no pasa.
+ - Proteus 9.2 SP1 se cerro una vez con "access violation en APPFRAME.DLL" al mover
+   la vista. Guardar seguido (Ctrl+S). Labcenter ya publico la 9.2 SP3.

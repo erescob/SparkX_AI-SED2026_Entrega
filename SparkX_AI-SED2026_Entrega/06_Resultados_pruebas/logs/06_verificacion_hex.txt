@@ -1,0 +1,16 @@
+demo_completo_nodo1.hex      tablas=OK  inferencia 50000 vectores, diferencias=0  -> OK
+demo_completo_nodo2.hex      tablas=OK  inferencia 50000 vectores, diferencias=0  -> OK
+demo_completo_nodo3.hex      tablas=OK  inferencia 50000 vectores, diferencias=0  -> OK
+demo_completo_nodo4.hex      tablas=OK  inferencia 50000 vectores, diferencias=0  -> OK
+demo_nodo1.hex               tablas=OK  inferencia 50000 vectores, diferencias=0  -> OK
+demo_nodo2.hex               tablas=OK  inferencia 50000 vectores, diferencias=0  -> OK
+demo_nodo3.hex               tablas=OK  inferencia 50000 vectores, diferencias=0  -> OK
+demo_nodo4.hex               tablas=OK  inferencia 50000 vectores, diferencias=0  -> OK
+sparkx_coordinador.hex       tablas=OK  inferencia 50000 vectores, diferencias=0  -> OK
+sparkx_nodo.hex              tablas=OK  inferencia 50000 vectores, diferencias=0  -> OK
+RESUMEN: TODOS LOS .hex LLEVAN EL MODELO ENTRENADO EXACTO
+demo_nodo1.hex               tablas=OK  inferencia 50000 vectores, diferencias=0  -> OK
+demo_nodo2.hex               tablas=OK  inferencia 50000 vectores, diferencias=0  -> OK
+demo_nodo3.hex               tablas=OK  inferencia 50000 vectores, diferencias=0  -> OK
+demo_nodo4.hex               tablas=OK  inferencia 50000 vectores, diferencias=0  -> OK
+RESUMEN: TODOS LOS .hex LLEVAN EL MODELO ENTRENADO EXACTO

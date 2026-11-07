@@ -1,0 +1,15 @@
+semilla 100 pol 3: 35040 pasos, diferencias = 0 {}
+semilla 101 pol 3: 35040 pasos, diferencias = 0 {}
+semilla 102 pol 4: 35040 pasos, diferencias = 0 {}
+semilla 103 pol 1: 35040 pasos, diferencias = 0 {}
+semilla 100 pol 5: 35040 pasos, diferencias = 0 {}
+semilla 101 pol 2: 35040 pasos, diferencias = 0 {}
+lazo cerrado semilla 100: idéntico=True  {'perdida_suciedad_pct': (np.float64(0.207326), np.float64(0.207326)), 'ciclos_eds': (226, 226), 'lavados': (0, 0), 'activaciones_inseguras': (0, 0), 'energia_neta_kwh': (np.float64(1053.877889), np.float64(1053.877889)), 'identico': True, 'semilla': 100}
+lazo cerrado semilla 101: idéntico=True  {'perdida_suciedad_pct': (np.float64(0.252038), np.float64(0.252038)), 'ciclos_eds': (276, 276), 'lavados': (0, 0), 'activaciones_inseguras': (0, 0), 'energia_neta_kwh': (np.float64(1051.048832), np.float64(1051.048832)), 'identico': True, 'semilla': 101}
+lazo cerrado semilla 102: idéntico=True  {'perdida_suciedad_pct': (np.float64(0.191873), np.float64(0.191873)), 'ciclos_eds': (223, 223), 'lavados': (0, 0), 'activaciones_inseguras': (0, 0), 'energia_neta_kwh': (np.float64(1065.696378), np.float64(1065.696378)), 'identico': True, 'semilla': 102}
+lazo cerrado semilla 103: idéntico=True  {'perdida_suciedad_pct': (np.float64(0.187523), np.float64(0.187523)), 'ciclos_eds': (182, 182), 'lavados': (0, 0), 'activaciones_inseguras': (0, 0), 'energia_neta_kwh': (np.float64(1072.282359), np.float64(1072.282359)), 'identico': True, 'semilla': 103}
+RESUMEN: {'pasos_totales': 210240, 'salidas_comparadas': 3153600, 'diferencias_totales': 0, 'lazo_cerrado_identico': True}
+
+real	0m34.943s
+user	0m34.400s
+sys	0m0.109s

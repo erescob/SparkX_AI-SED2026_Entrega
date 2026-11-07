@@ -1,0 +1,168 @@
+{
+ "paso_a_paso": [
+  {
+   "semilla": 100,
+   "politica": 3,
+   "fallas": "Fallas(conector_inicio_dia=None, conector_tau_dias=25.0, hotspot_inicio_dia=None, hotspot_dt=15.0, sensor=None, sensor_inicio_dia=0.0, lodo_dia=None)",
+   "pasos": 35040,
+   "salidas_comparadas": 525600,
+   "diferencias": 0,
+   "campos_con_diferencias": {},
+   "ejemplos": {}
+  },
+  {
+   "semilla": 101,
+   "politica": 3,
+   "fallas": "Fallas(conector_inicio_dia=80, conector_tau_dias=20, hotspot_inicio_dia=200, hotspot_dt=16, sensor=None, sensor_inicio_dia=0.0, lodo_dia=None)",
+   "pasos": 35040,
+   "salidas_comparadas": 525600,
+   "diferencias": 0,
+   "campos_con_diferencias": {},
+   "ejemplos": {}
+  },
+  {
+   "semilla": 102,
+   "politica": 4,
+   "fallas": "Fallas(conector_inicio_dia=None, conector_tau_dias=25.0, hotspot_inicio_dia=None, hotspot_dt=15.0, sensor='sht_congelado', sensor_inicio_dia=150.4, lodo_dia=None)",
+   "pasos": 35040,
+   "salidas_comparadas": 525600,
+   "diferencias": 0,
+   "campos_con_diferencias": {},
+   "ejemplos": {}
+  },
+  {
+   "semilla": 103,
+   "politica": 1,
+   "fallas": "Fallas(conector_inicio_dia=None, conector_tau_dias=25.0, hotspot_inicio_dia=None, hotspot_dt=15.0, sensor='ntc_abierto', sensor_inicio_dia=250.7, lodo_dia=None)",
+   "pasos": 35040,
+   "salidas_comparadas": 525600,
+   "diferencias": 0,
+   "campos_con_diferencias": {},
+   "ejemplos": {}
+  },
+  {
+   "semilla": 100,
+   "politica": 5,
+   "fallas": "Fallas(conector_inicio_dia=None, conector_tau_dias=25.0, hotspot_inicio_dia=None, hotspot_dt=15.0, sensor='afe_abierto', sensor_inicio_dia=90.2, lodo_dia=None)",
+   "pasos": 35040,
+   "salidas_comparadas": 525600,
+   "diferencias": 0,
+   "campos_con_diferencias": {},
+   "ejemplos": {}
+  },
+  {
+   "semilla": 101,
+   "politica": 2,
+   "fallas": "Fallas(conector_inicio_dia=None, conector_tau_dias=25.0, hotspot_inicio_dia=None, hotspot_dt=15.0, sensor=None, sensor_inicio_dia=0.0, lodo_dia=None)",
+   "pasos": 35040,
+   "salidas_comparadas": 525600,
+   "diferencias": 0,
+   "campos_con_diferencias": {},
+   "ejemplos": {}
+  }
+ ],
+ "lazo_cerrado": [
+  {
+   "perdida_suciedad_pct": [
+    0.207326,
+    0.207326
+   ],
+   "ciclos_eds": [
+    226,
+    226
+   ],
+   "lavados": [
+    0,
+    0
+   ],
+   "activaciones_inseguras": [
+    0,
+    0
+   ],
+   "energia_neta_kwh": [
+    1053.877889,
+    1053.877889
+   ],
+   "identico": true,
+   "semilla": 100
+  },
+  {
+   "perdida_suciedad_pct": [
+    0.252038,
+    0.252038
+   ],
+   "ciclos_eds": [
+    276,
+    276
+   ],
+   "lavados": [
+    0,
+    0
+   ],
+   "activaciones_inseguras": [
+    0,
+    0
+   ],
+   "energia_neta_kwh": [
+    1051.048832,
+    1051.048832
+   ],
+   "identico": true,
+   "semilla": 101
+  },
+  {
+   "perdida_suciedad_pct": [
+    0.191873,
+    0.191873
+   ],
+   "ciclos_eds": [
+    223,
+    223
+   ],
+   "lavados": [
+    0,
+    0
+   ],
+   "activaciones_inseguras": [
+    0,
+    0
+   ],
+   "energia_neta_kwh": [
+    1065.696378,
+    1065.696378
+   ],
+   "identico": true,
+   "semilla": 102
+  },
+  {
+   "perdida_suciedad_pct": [
+    0.187523,
+    0.187523
+   ],
+   "ciclos_eds": [
+    182,
+    182
+   ],
+   "lavados": [
+    0,
+    0
+   ],
+   "activaciones_inseguras": [
+    0,
+    0
+   ],
+   "energia_neta_kwh": [
+    1072.282359,
+    1072.282359
+   ],
+   "identico": true,
+   "semilla": 103
+  }
+ ],
+ "resumen": {
+  "pasos_totales": 210240,
+  "salidas_comparadas": 3153600,
+  "diferencias_totales": 0,
+  "lazo_cerrado_identico": true
+ }
+}

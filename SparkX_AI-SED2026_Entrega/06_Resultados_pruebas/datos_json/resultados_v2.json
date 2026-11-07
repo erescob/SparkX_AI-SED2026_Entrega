@@ -1,0 +1,848 @@
+{
+ "politicas": {
+  "base": {
+   "Horario fijo": {
+    "perdida_suciedad_pct": 0.125271649916181,
+    "energia_neta_kwh": 1061.3210443671665,
+    "ciclos_eds": 365.0,
+    "lavados": 0.0,
+    "agua_litros": 0.0,
+    "activaciones_inseguras": 0.0,
+    "usd": 127.28552532405996,
+    "energia_limpieza_kwh": 0.8004449999999965,
+    "params": {
+     "hora_fija_fin": 16.0,
+     "hora_fija_ini": 12.0
+    },
+    "usd_por_anio": [
+     126.47,
+     126.135,
+     127.856,
+     128.681
+    ],
+    "ganancia_vs_sin_limpieza_usd": 4.290053594036451
+   },
+   "Umbral (reactiva)": {
+    "perdida_suciedad_pct": 0.11641517310148342,
+    "energia_neta_kwh": 1061.0637049865,
+    "ciclos_eds": 525.25,
+    "lavados": 0.0,
+    "agua_litros": 0.0,
+    "activaciones_inseguras": 0.0,
+    "usd": 127.22259459837997,
+    "energia_limpieza_kwh": 1.151873249999994,
+    "params": {
+     "umbral_suelto": 0.0025
+    },
+    "usd_por_anio": [
+     126.412,
+     126.039,
+     127.802,
+     128.638
+    ],
+    "ganancia_vs_sin_limpieza_usd": 4.22712286835646
+   },
+   "IA predictiva": {
+    "perdida_suciedad_pct": 0.20969001466300818,
+    "energia_neta_kwh": 1060.7263643952888,
+    "ciclos_eds": 226.75,
+    "lavados": 0.0,
+    "agua_litros": 0.0,
+    "activaciones_inseguras": 0.0,
+    "usd": 127.24181372743465,
+    "energia_limpieza_kwh": 0.49726274999999887,
+    "params": {
+     "p_rocio": 0.6,
+     "umbral_pre": 0.003,
+     "umbral_suelto": 0.005
+    },
+    "usd_por_anio": [
+     126.42,
+     126.071,
+     127.839,
+     128.637
+    ],
+    "ganancia_vs_sin_limpieza_usd": 4.246341997411136
+   },
+   "Regla de rocío": {
+    "perdida_suciedad_pct": 0.19716962397401394,
+    "energia_neta_kwh": 1060.7075833717986,
+    "ciclos_eds": 296.0,
+    "lavados": 0.0,
+    "agua_litros": 0.0,
+    "activaciones_inseguras": 0.0,
+    "usd": 127.22571000461585,
+    "energia_limpieza_kwh": 0.6491279999999977,
+    "params": {
+     "margen_regla": 6.0,
+     "umbral_pre": 0.001,
+     "umbral_suelto": 0.005
+    },
+    "usd_por_anio": [
+     126.416,
+     126.065,
+     127.798,
+     128.624
+    ],
+    "ganancia_vs_sin_limpieza_usd": 4.230238274592338
+   },
+   "Cada hora": {
+    "perdida_suciedad_pct": 0.027332325179488248,
+    "energia_neta_kwh": 1045.4563924111014,
+    "ciclos_eds": 8073.5,
+    "lavados": 0.0,
+    "agua_litros": 0.0,
+    "activaciones_inseguras": 0.0,
+    "usd": 123.84006708933218,
+    "energia_limpieza_kwh": 17.705185499997548,
+    "params": {},
+    "usd_por_anio": [
+     122.891,
+     122.901,
+     124.444,
+     125.124
+    ],
+    "ganancia_vs_sin_limpieza_usd": 0.8445953593086699
+   },
+   "Sin limpieza": {
+    "perdida_suciedad_pct": 3.6203645410543075,
+    "energia_neta_kwh": 1024.9622644168626,
+    "ciclos_eds": 0.0,
+    "lavados": 0.0,
+    "agua_litros": 0.0,
+    "activaciones_inseguras": 0.0,
+    "usd": 122.99547173002351,
+    "energia_limpieza_kwh": 0.0,
+    "params": {},
+    "usd_por_anio": [
+     121.444,
+     122.385,
+     123.358,
+     124.795
+    ],
+    "ganancia_vs_sin_limpieza_usd": 0.0
+   },
+   "Lavado mensual (sin EDS)": {
+    "perdida_suciedad_pct": 0.9141446820325194,
+    "energia_neta_kwh": 1053.7338100429115,
+    "ciclos_eds": 0.0,
+    "lavados": 12.0,
+    "agua_litros": 46.44,
+    "activaciones_inseguras": 0.0,
+    "usd": 114.44805720514937,
+    "energia_limpieza_kwh": 0.0,
+    "params": {},
+    "usd_por_anio": [
+     113.529,
+     113.367,
+     115.001,
+     115.895
+    ],
+    "ganancia_vs_sin_limpieza_usd": -8.547414524874142
+   }
+  },
+  "polvoso": {
+   "Horario fijo": {
+    "perdida_suciedad_pct": 0.4713848597380721,
+    "energia_neta_kwh": 1057.6450599296459,
+    "ciclos_eds": 365.0,
+    "lavados": 0.0,
+    "agua_litros": 0.0,
+    "activaciones_inseguras": 0.0,
+    "usd": 126.8444071915575,
+    "energia_limpieza_kwh": 0.8004449999999965,
+    "params": {
+     "hora_fija_fin": 16.0,
+     "hora_fija_ini": 12.0
+    },
+    "usd_por_anio": [
+     126.061,
+     125.553,
+     127.408,
+     128.355
+    ],
+    "ganancia_vs_sin_limpieza_usd": 15.059907460989749
+   },
+   "Umbral (reactiva)": {
+    "perdida_suciedad_pct": 0.2817520109900912,
+    "energia_neta_kwh": 1058.4211843294966,
+    "ciclos_eds": 929.25,
+    "lavados": 0.0,
+    "agua_litros": 0.0,
+    "activaciones_inseguras": 0.0,
+    "usd": 126.82469211953959,
+    "energia_limpieza_kwh": 2.037845249999994,
+    "params": {
+     "umbral_suelto": 0.0025
+    },
+    "usd_por_anio": [
+     126.095,
+     125.55,
+     127.365,
+     128.289
+    ],
+    "ganancia_vs_sin_limpieza_usd": 15.040192388971846
+   },
+   "IA predictiva": {
+    "perdida_suciedad_pct": 0.40912652736659894,
+    "energia_neta_kwh": 1058.0216981878643,
+    "ciclos_eds": 494.5,
+    "lavados": 0.0,
+    "agua_litros": 0.0,
+    "activaciones_inseguras": 0.0,
+    "usd": 126.8637037825437,
+    "energia_limpieza_kwh": 1.0844384999999943,
+    "params": {
+     "p_rocio": 0.6,
+     "umbral_pre": 0.003,
+     "umbral_suelto": 0.005
+    },
+    "usd_por_anio": [
+     126.064,
+     125.591,
+     127.467,
+     128.334
+    ],
+    "ganancia_vs_sin_limpieza_usd": 15.07920405197595
+   },
+   "Regla de rocío": {
+    "perdida_suciedad_pct": 0.41918632865703687,
+    "energia_neta_kwh": 1057.7981867213193,
+    "ciclos_eds": 547.75,
+    "lavados": 0.0,
+    "agua_litros": 0.0,
+    "activaciones_inseguras": 0.0,
+    "usd": 126.82623240655832,
+    "energia_limpieza_kwh": 1.2012157499999936,
+    "params": {
+     "margen_regla": 6.0,
+     "umbral_pre": 0.001,
+     "umbral_suelto": 0.005
+    },
+    "usd_por_anio": [
+     125.985,
+     125.596,
+     127.418,
+     128.306
+    ],
+    "ganancia_vs_sin_limpieza_usd": 15.041732675990573
+   },
+   "Cada hora": {
+    "perdida_suciedad_pct": 0.10805094695162942,
+    "energia_neta_kwh": 1044.599287924491,
+    "ciclos_eds": 8073.5,
+    "lavados": 0.0,
+    "agua_litros": 0.0,
+    "activaciones_inseguras": 0.0,
+    "usd": 123.73721455093892,
+    "energia_limpieza_kwh": 17.705185499997548,
+    "params": {},
+    "usd_por_anio": [
+     122.813,
+     122.745,
+     124.342,
+     125.048
+    ],
+    "ganancia_vs_sin_limpieza_usd": 11.95271482037117
+   },
+   "Sin limpieza": {
+    "perdida_suciedad_pct": 12.408840098079521,
+    "energia_neta_kwh": 931.5374977547311,
+    "ciclos_eds": 0.0,
+    "lavados": 0.0,
+    "agua_litros": 0.0,
+    "activaciones_inseguras": 0.0,
+    "usd": 111.78449973056775,
+    "energia_limpieza_kwh": 0.0,
+    "params": {},
+    "usd_por_anio": [
+     108.62,
+     111.962,
+     111.745,
+     114.811
+    ],
+    "ganancia_vs_sin_limpieza_usd": 0.0
+   },
+   "Lavado mensual (sin EDS)": {
+    "perdida_suciedad_pct": 3.3535589442762164,
+    "energia_neta_kwh": 1027.7962687760396,
+    "ciclos_eds": 0.0,
+    "lavados": 12.0,
+    "agua_litros": 46.44,
+    "activaciones_inseguras": 0.0,
+    "usd": 111.33555225312473,
+    "energia_limpieza_kwh": 0.0,
+    "params": {},
+    "usd_por_anio": [
+     110.337,
+     110.274,
+     111.826,
+     112.906
+    ],
+    "ganancia_vs_sin_limpieza_usd": -0.44894747744301355
+   }
+  },
+  "cementacion_alta": {
+   "Horario fijo": {
+    "perdida_suciedad_pct": 0.1808978191134375,
+    "energia_neta_kwh": 1060.7303261856803,
+    "ciclos_eds": 365.0,
+    "lavados": 0.0,
+    "agua_litros": 0.0,
+    "activaciones_inseguras": 0.0,
+    "usd": 127.21463914228161,
+    "energia_limpieza_kwh": 0.8004449999999965,
+    "params": {
+     "hora_fija_fin": 16.0,
+     "hora_fija_ini": 12.0
+    },
+    "usd_por_anio": [
+     126.416,
+     126.033,
+     127.772,
+     128.637
+    ],
+    "ganancia_vs_sin_limpieza_usd": 4.441234750448459
+   },
+   "Umbral (reactiva)": {
+    "perdida_suciedad_pct": 0.15670918967588265,
+    "energia_neta_kwh": 1060.4393799036372,
+    "ciclos_eds": 614.75,
+    "lavados": 0.0,
+    "agua_litros": 0.0,
+    "activaciones_inseguras": 0.0,
+    "usd": 127.12977558843647,
+    "energia_limpieza_kwh": 1.3481467499999926,
+    "params": {
+     "umbral_suelto": 0.0025
+    },
+    "usd_por_anio": [
+     126.334,
+     125.923,
+     127.687,
+     128.576
+    ],
+    "ganancia_vs_sin_limpieza_usd": 4.35637119660332
+   },
+   "IA predictiva": {
+    "perdida_suciedad_pct": 0.25306619653006623,
+    "energia_neta_kwh": 1060.1800466312316,
+    "ciclos_eds": 265.75,
+    "lavados": 0.0,
+    "agua_litros": 0.0,
+    "activaciones_inseguras": 0.0,
+    "usd": 127.16845559574779,
+    "energia_limpieza_kwh": 0.5827897499999981,
+    "params": {
+     "p_rocio": 0.6,
+     "umbral_pre": 0.003,
+     "umbral_suelto": 0.005
+    },
+    "usd_por_anio": [
+     126.369,
+     125.96,
+     127.763,
+     128.581
+    ],
+    "ganancia_vs_sin_limpieza_usd": 4.395051203914633
+   },
+   "Regla de rocío": {
+    "perdida_suciedad_pct": 0.2525235941959775,
+    "energia_neta_kwh": 1060.0248126882768,
+    "ciclos_eds": 339.25,
+    "lavados": 0.0,
+    "agua_litros": 0.0,
+    "activaciones_inseguras": 0.0,
+    "usd": 127.13512752259322,
+    "energia_limpieza_kwh": 0.7439752499999969,
+    "params": {
+     "margen_regla": 6.0,
+     "umbral_pre": 0.001,
+     "umbral_suelto": 0.005
+    },
+    "usd_por_anio": [
+     126.31,
+     125.97,
+     127.694,
+     128.567
+    ],
+    "ganancia_vs_sin_limpieza_usd": 4.361723130760069
+   },
+   "Cada hora": {
+    "perdida_suciedad_pct": 0.04785200615624319,
+    "energia_neta_kwh": 1045.2384530790464,
+    "ciclos_eds": 8073.5,
+    "lavados": 0.0,
+    "agua_litros": 0.0,
+    "activaciones_inseguras": 0.0,
+    "usd": 123.81391436948557,
+    "energia_limpieza_kwh": 17.705185499997548,
+    "params": {},
+    "usd_por_anio": [
+     122.875,
+     122.861,
+     124.415,
+     125.105
+    ],
+    "ganancia_vs_sin_limpieza_usd": 1.0405099776524196
+   },
+   "Sin limpieza": {
+    "perdida_suciedad_pct": 3.794474456204203,
+    "energia_neta_kwh": 1023.1117032652762,
+    "ciclos_eds": 0.0,
+    "lavados": 0.0,
+    "agua_litros": 0.0,
+    "activaciones_inseguras": 0.0,
+    "usd": 122.77340439183315,
+    "energia_limpieza_kwh": 0.0,
+    "params": {},
+    "usd_por_anio": [
+     121.182,
+     122.186,
+     123.105,
+     124.621
+    ],
+    "ganancia_vs_sin_limpieza_usd": 0.0
+   },
+   "Lavado mensual (sin EDS)": {
+    "perdida_suciedad_pct": 0.9301602635519768,
+    "energia_neta_kwh": 1053.5633976504432,
+    "ciclos_eds": 0.0,
+    "lavados": 12.0,
+    "agua_litros": 46.44,
+    "activaciones_inseguras": 0.0,
+    "usd": 114.42760771805317,
+    "energia_limpieza_kwh": 0.0,
+    "params": {},
+    "usd_por_anio": [
+     113.514,
+     113.346,
+     114.975,
+     115.874
+    ],
+    "ganancia_vs_sin_limpieza_usd": -8.345796673779986
+   }
+  }
+ },
+ "seguridad": {
+  "v2_ia": 0,
+  "v1_ia": 3,
+  "v2_cada_hora": 0,
+  "v1_cada_hora": 641,
+  "fallas_sensor": {
+   "sht_congelado": {
+    "casos": 12,
+    "inseguras": 0,
+    "detectada": 12,
+    "horas_hasta_deteccion_max": 5.9,
+    "horas_hasta_deteccion_mediana": 5.9
+   },
+   "ntc_abierto": {
+    "casos": 12,
+    "inseguras": 0,
+    "detectada": 12,
+    "horas_hasta_deteccion_max": -0.1,
+    "horas_hasta_deteccion_mediana": -0.1
+   },
+   "afe_abierto": {
+    "casos": 12,
+    "inseguras": 0,
+    "detectada": 12,
+    "horas_hasta_deteccion_max": -0.1,
+    "horas_hasta_deteccion_mediana": -0.1
+   }
+  },
+  "v2_ia_por_anio": 0.0,
+  "v1_ia_por_anio": 0.75,
+  "v2_cada_hora_por_anio": 0.0,
+  "v1_cada_hora_por_anio": 160.25
+ },
+ "alertas": {
+  "conector": {
+   "casos": 16,
+   "v2_detectados": 16,
+   "v1_detectados": 15,
+   "v2_retraso_mediano_dias": -0.5,
+   "v1_retraso_mediano_dias": 61.5,
+   "v2_dias_antes_de_falla_mediana": 14.0,
+   "v1_dias_antes_de_falla_mediana": -47.5,
+   "v1_avisa_despues_de_la_falla": 15,
+   "pronostico_error_mediano_abs_dias": 2.4130382537841797,
+   "pronostico_error_mediano_dias": -1.6443424224853516,
+   "detalle": [
+    {
+     "real_alerta": 241.0,
+     "real_falla": 258.0,
+     "v2": 239.5,
+     "v1": 320.5,
+     "pronostico_dias": 16.63,
+     "retraso_v2": -1.5,
+     "retraso_v1": 79.5,
+     "antes_de_falla_v2": 18.5,
+     "antes_de_falla_v1": -62.5,
+     "error_pronostico": -1.87
+    },
+    {
+     "real_alerta": 181.0,
+     "real_falla": 198.0,
+     "v2": 181.5,
+     "v1": 259.5,
+     "pronostico_dias": 21.95,
+     "retraso_v2": 0.5,
+     "retraso_v1": 78.5,
+     "antes_de_falla_v2": 16.5,
+     "antes_de_falla_v1": -61.5,
+     "error_pronostico": 5.45
+    },
+    {
+     "real_alerta": 249.0,
+     "real_falla": 262.0,
+     "v2": 248.5,
+     "v1": 309.5,
+     "pronostico_dias": 14.59,
+     "retraso_v2": -0.5,
+     "retraso_v1": 60.5,
+     "antes_de_falla_v2": 13.5,
+     "antes_de_falla_v1": -47.5,
+     "error_pronostico": 1.09
+    },
+    {
+     "real_alerta": 150.0,
+     "real_falla": 163.0,
+     "v2": 148.5,
+     "v1": 203.5,
+     "pronostico_dias": 9.92,
+     "retraso_v2": -1.5,
+     "retraso_v1": 53.5,
+     "antes_de_falla_v2": 14.5,
+     "antes_de_falla_v1": -40.5,
+     "error_pronostico": -4.58
+    },
+    {
+     "real_alerta": 302.0,
+     "real_falla": 318.0,
+     "v2": 301.5,
+     "v1": NaN,
+     "pronostico_dias": 18.89,
+     "retraso_v2": -0.5,
+     "retraso_v1": NaN,
+     "antes_de_falla_v2": 16.5,
+     "antes_de_falla_v1": NaN,
+     "error_pronostico": 2.39
+    },
+    {
+     "real_alerta": 128.0,
+     "real_falla": 137.0,
+     "v2": 128.5,
+     "v1": 171.5,
+     "pronostico_dias": 10.01,
+     "retraso_v2": 0.5,
+     "retraso_v1": 43.5,
+     "antes_de_falla_v2": 8.5,
+     "antes_de_falla_v1": -34.5,
+     "error_pronostico": 1.51
+    },
+    {
+     "real_alerta": 115.0,
+     "real_falla": 128.0,
+     "v2": 111.5,
+     "v1": 177.5,
+     "pronostico_dias": 10.92,
+     "retraso_v2": -3.5,
+     "retraso_v1": 62.5,
+     "antes_de_falla_v2": 16.5,
+     "antes_de_falla_v1": -49.5,
+     "error_pronostico": -5.58
+    },
+    {
+     "real_alerta": 221.0,
+     "real_falla": 235.0,
+     "v2": 222.5,
+     "v1": 282.5,
+     "pronostico_dias": 12.49,
+     "retraso_v2": 1.5,
+     "retraso_v1": 61.5,
+     "antes_de_falla_v2": 12.5,
+     "antes_de_falla_v1": -47.5,
+     "error_pronostico": -0.01
+    },
+    {
+     "real_alerta": 93.0,
+     "real_falla": 103.0,
+     "v2": 92.5,
+     "v1": 140.5,
+     "pronostico_dias": 6.71,
+     "retraso_v2": -0.5,
+     "retraso_v1": 47.5,
+     "antes_de_falla_v2": 10.5,
+     "antes_de_falla_v1": -37.5,
+     "error_pronostico": -3.79
+    },
+    {
+     "real_alerta": 147.0,
+     "real_falla": 155.0,
+     "v2": 147.5,
+     "v1": 185.5,
+     "pronostico_dias": 5.21,
+     "retraso_v2": 0.5,
+     "retraso_v1": 38.5,
+     "antes_de_falla_v2": 7.5,
+     "antes_de_falla_v1": -30.5,
+     "error_pronostico": -2.29
+    },
+    {
+     "real_alerta": 176.0,
+     "real_falla": 193.0,
+     "v2": 174.5,
+     "v1": 249.5,
+     "pronostico_dias": 19.66,
+     "retraso_v2": -1.5,
+     "retraso_v1": 73.5,
+     "antes_de_falla_v2": 18.5,
+     "antes_de_falla_v1": -56.5,
+     "error_pronostico": 1.16
+    },
+    {
+     "real_alerta": 235.0,
+     "real_falla": 251.0,
+     "v2": 231.5,
+     "v1": 305.5,
+     "pronostico_dias": 15.21,
+     "retraso_v2": -3.5,
+     "retraso_v1": 70.5,
+     "antes_de_falla_v2": 19.5,
+     "antes_de_falla_v1": -54.5,
+     "error_pronostico": -4.29
+    },
+    {
+     "real_alerta": 219.0,
+     "real_falla": 236.0,
+     "v2": 220.5,
+     "v1": 296.5,
+     "pronostico_dias": 17.93,
+     "retraso_v2": 1.5,
+     "retraso_v1": 77.5,
+     "antes_de_falla_v2": 15.5,
+     "antes_de_falla_v1": -60.5,
+     "error_pronostico": 2.43
+    },
+    {
+     "real_alerta": 112.0,
+     "real_falla": 124.0,
+     "v2": 111.5,
+     "v1": 170.5,
+     "pronostico_dias": 11.09,
+     "retraso_v2": -0.5,
+     "retraso_v1": 58.5,
+     "antes_de_falla_v2": 12.5,
+     "antes_de_falla_v1": -46.5,
+     "error_pronostico": -1.41
+    },
+    {
+     "real_alerta": 248.0,
+     "real_falla": 260.0,
+     "v2": 248.5,
+     "v1": 305.5,
+     "pronostico_dias": 6.26,
+     "retraso_v2": 0.5,
+     "retraso_v1": 57.5,
+     "antes_de_falla_v2": 11.5,
+     "antes_de_falla_v1": -45.5,
+     "error_pronostico": -5.24
+    },
+    {
+     "real_alerta": 224.0,
+     "real_falla": 238.0,
+     "v2": 224.5,
+     "v1": 292.5,
+     "pronostico_dias": 10.78,
+     "retraso_v2": 0.5,
+     "retraso_v1": 68.5,
+     "antes_de_falla_v2": 13.5,
+     "antes_de_falla_v1": -54.5,
+     "error_pronostico": -2.72
+    }
+   ]
+  },
+  "termica": {
+   "casos": 16,
+   "v2_detectados": 16,
+   "v2_retraso_mediano_dias": 4.188949800910457,
+   "v2_retraso_max_dias": 16.000133306199615,
+   "detalle": [
+    {
+     "inicio": 241.68,
+     "dt": 13.8,
+     "v2": 245.99,
+     "v1_primer_dia": 5.0,
+     "dias_v1": 304,
+     "retraso_v2": 4.31
+    },
+    {
+     "inicio": 41.37,
+     "dt": 18.57,
+     "v2": 45.99,
+     "v1_primer_dia": 5.0,
+     "dias_v1": 329,
+     "retraso_v2": 4.62
+    },
+    {
+     "inicio": 118.79,
+     "dt": 14.23,
+     "v2": 120.99,
+     "v1_primer_dia": 5.0,
+     "dias_v1": 307,
+     "retraso_v2": 2.2
+    },
+    {
+     "inicio": 171.18,
+     "dt": 16.43,
+     "v2": 173.99,
+     "v1_primer_dia": 5.0,
+     "dias_v1": 311,
+     "retraso_v2": 2.81
+    },
+    {
+     "inicio": 201.77,
+     "dt": 19.91,
+     "v2": 205.99,
+     "v1_primer_dia": 6.0,
+     "dias_v1": 302,
+     "retraso_v2": 4.22
+    },
+    {
+     "inicio": 199.26,
+     "dt": 12.35,
+     "v2": 204.99,
+     "v1_primer_dia": 6.0,
+     "dias_v1": 293,
+     "retraso_v2": 5.73
+    },
+    {
+     "inicio": 161.21,
+     "dt": 19.34,
+     "v2": 164.99,
+     "v1_primer_dia": 6.0,
+     "dias_v1": 301,
+     "retraso_v2": 3.78
+    },
+    {
+     "inicio": 169.19,
+     "dt": 13.98,
+     "v2": 174.99,
+     "v1_primer_dia": 6.0,
+     "dias_v1": 297,
+     "retraso_v2": 5.8
+    },
+    {
+     "inicio": 219.93,
+     "dt": 13.6,
+     "v2": 223.99,
+     "v1_primer_dia": 3.0,
+     "dias_v1": 288,
+     "retraso_v2": 4.06
+    },
+    {
+     "inicio": 255.81,
+     "dt": 13.24,
+     "v2": 259.99,
+     "v1_primer_dia": 3.0,
+     "dias_v1": 283,
+     "retraso_v2": 4.18
+    },
+    {
+     "inicio": 172.55,
+     "dt": 18.78,
+     "v2": 175.99,
+     "v1_primer_dia": 3.0,
+     "dias_v1": 299,
+     "retraso_v2": 3.44
+    },
+    {
+     "inicio": 63.79,
+     "dt": 16.33,
+     "v2": 67.99,
+     "v1_primer_dia": 3.0,
+     "dias_v1": 316,
+     "retraso_v2": 4.2
+    },
+    {
+     "inicio": 133.93,
+     "dt": 16.79,
+     "v2": 137.99,
+     "v1_primer_dia": 13.0,
+     "dias_v1": 299,
+     "retraso_v2": 4.06
+    },
+    {
+     "inicio": 123.99,
+     "dt": 13.2,
+     "v2": 139.99,
+     "v1_primer_dia": 13.0,
+     "dias_v1": 293,
+     "retraso_v2": 16.0
+    },
+    {
+     "inicio": 294.47,
+     "dt": 16.72,
+     "v2": 298.99,
+     "v1_primer_dia": 13.0,
+     "dias_v1": 293,
+     "retraso_v2": 4.52
+    },
+    {
+     "inicio": 215.88,
+     "dt": 13.21,
+     "v2": 219.99,
+     "v1_primer_dia": 13.0,
+     "dias_v1": 291,
+     "retraso_v2": 4.11
+    }
+   ]
+  },
+  "sanos": {
+   "anios": 4,
+   "v2_falsas_conector": 0,
+   "v2_falsas_termica": 2,
+   "v1_falsas_conector": 0,
+   "v1_dias_con_alarma_termica_por_anio": 255.75
+  }
+ },
+ "lodo": {
+  "Horario fijo": {
+   "casos": 12,
+   "lavados": 12,
+   "perdida_media_pct": 0.16,
+   "ciclos_medios": 365.0,
+   "lavados_por_evento": 1.0
+  },
+  "Umbral (reactiva)": {
+   "casos": 12,
+   "lavados": 0,
+   "perdida_media_pct": 0.157,
+   "ciclos_medios": 579.8,
+   "lavados_por_evento": 0.0
+  },
+  "IA predictiva": {
+   "casos": 12,
+   "lavados": 0,
+   "perdida_media_pct": 0.255,
+   "ciclos_medios": 245.5,
+   "lavados_por_evento": 0.0
+  },
+  "Regla de rocío": {
+   "casos": 12,
+   "lavados": 0,
+   "perdida_media_pct": 0.257,
+   "ciclos_medios": 317.3,
+   "lavados_por_evento": 0.0
+  },
+  "Sin limpieza": {
+   "casos": 12,
+   "lavados": 0,
+   "perdida_media_pct": 5.376,
+   "ciclos_medios": 0.0,
+   "lavados_por_evento": 0.0
+  }
+ }
+}

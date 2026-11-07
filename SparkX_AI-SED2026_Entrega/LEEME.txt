@@ -1,0 +1,52 @@
+SPARK X - AI-SED 2026 (AI Smart Electronic Design)
+Limpieza electrodinamica de paneles solares con prediccion de rocio en el borde
+=================================================================================
+
+Cada panel lleva una PCB con un STM32F411RC (Cortex-M4F). Un arbol de decision de 125
+nodos (1.75 KB de flash), ejecutado en el propio micro sin nube, estima la probabilidad
+de agua en el vidrio en las proximas 8 h. Con eso el sistema decide cuando es seguro y
+conveniente energizar la pantalla electrodinamica (1.2 kV). Las tarjetas forman una red
+de un hilo coordinada por la tarjeta 1.
+
+POR DONDE EMPEZAR
+  1. 01_Documentos\SparkX_paper_IA_en_el_borde.pdf          (articulo, 8 paginas)
+  2. 01_Documentos\SparkX_reporte_simulacion_y_pruebas.pdf  (como se verifico todo)
+  3. 05_Simulacion_Proteus\GUIA_SIMULACION_PROTEUS.txt      (para verlo funcionar)
+
+CONTENIDO
+  01_Documentos            Paper (formato IEEE), reporte de simulacion y pruebas,
+                           revision de esquematicos (18 hallazgos con su solucion).
+  02_Hardware_PCB          Salidas de Proteus del diseno SISTEMA_PCB: esquematico (PDF),
+                           vista de la PCB, lista de materiales, pick and place, netlist IPC.
+  03_Codigo_fuente         firmware\  C para el STM32 (registros, sin HAL de ST) + pruebas en PC
+                           python\    entrenamiento del modelo, simulacion fisica, verificaciones
+                           datos\     datos de 6 tarjetas x 28 dias usados en las simulaciones
+                           resultados\ metricas, modelo exportado, registros de la red simulada
+                           README.md  descripcion tecnica, instalacion y uso
+  04_Firmware_compilado    .hex listos para grabar o simular. SHA256SUMS.txt para verificarlos.
+                           produccion_STM32F411RC\  coordinador (ID 1) y nodo generico
+                           demo_Proteus_STM32F411RC\ sensores simulados, paso de 4 s
+                           demo_Proteus_STM32F401RC\ igual, para Proteus sin el F411RC
+  05_Simulacion_Proteus    Guia del banco de 2 tarjetas y la salida esperada de la terminal.
+  06_Resultados_pruebas    Registros de cada prueba (logs\), figuras y resultados en JSON.
+
+RESULTADOS PRINCIPALES
+  - IA: AUC 0.927 contra 0.737 de la regla de margen de rocio; detecta el 90.9 % de los
+    eventos de agua y el 82.3 % a tiempo, con una anticipacion mediana de 8 h.
+  - Con el hardware completo: 38 % menos ciclos de alta tension que un horario fijo y
+    0 activaciones inseguras.
+  - Firmware: 47.9 KB de flash (37 %) y 9.4 KB de RAM + 8 KB de pila.
+  - El C reproduce al modelo de Python sin diferencias: 0 de 3,153,600 salidas.
+  - Los 14 .hex llevan el modelo entrenado exacto (verificado leyendo el .hex).
+  - Red de 6 tarjetas, 28 dias simulados: 0 ms de alta tension con agua y 0 tramas con error.
+
+REPRODUCIR LAS PRUEBAS (Linux o WSL)
+  cd 03_Codigo_fuente/firmware && make stm32 proteus proteus_f401 && make pruebas && make nucleo
+  cd ../python && python3 verificar_hex.py && python3 sil_validacion.py
+
+LIMITACIONES (detalle en el paper, seccion VIII)
+  - Los datos de clima son sinteticos, ajustados a las normales de CONAGUA para Hermosillo.
+  - El firmware no se ha ejecutado aun en una tarjeta fisica.
+  - La PCB actual necesita los cambios de cableado H1-H4 de la revision de esquematicos.
+
+Equipo Spark X - Universidad de Sonora - noviembre de 2026

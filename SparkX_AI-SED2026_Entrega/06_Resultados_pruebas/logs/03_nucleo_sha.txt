@@ -1,0 +1,5 @@
+cd nucleo_v2 && sha256sum -c SHA256SUMS
+sx_controlador.c: OK
+sx_controlador.h: OK
+sx_config.h: OK
+sx_modelo_rocio.h: OK

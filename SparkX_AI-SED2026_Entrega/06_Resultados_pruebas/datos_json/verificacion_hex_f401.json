@@ -1,0 +1,61 @@
+{
+ "modelo": {
+  "nodos": 125,
+  "bytes_flash": 2750
+ },
+ "archivos": [
+  {
+   "hex": "demo_nodo1.hex",
+   "tablas_identicas": {
+    "SX_ARBOL_FEAT": true,
+    "SX_ARBOL_THR": true,
+    "SX_ARBOL_IZQ": true,
+    "SX_ARBOL_DER": true,
+    "SX_ARBOL_PROB": true
+   },
+   "vectores": 50000,
+   "diferencias_inferencia": 0,
+   "ok": true
+  },
+  {
+   "hex": "demo_nodo2.hex",
+   "tablas_identicas": {
+    "SX_ARBOL_FEAT": true,
+    "SX_ARBOL_THR": true,
+    "SX_ARBOL_IZQ": true,
+    "SX_ARBOL_DER": true,
+    "SX_ARBOL_PROB": true
+   },
+   "vectores": 50000,
+   "diferencias_inferencia": 0,
+   "ok": true
+  },
+  {
+   "hex": "demo_nodo3.hex",
+   "tablas_identicas": {
+    "SX_ARBOL_FEAT": true,
+    "SX_ARBOL_THR": true,
+    "SX_ARBOL_IZQ": true,
+    "SX_ARBOL_DER": true,
+    "SX_ARBOL_PROB": true
+   },
+   "vectores": 50000,
+   "diferencias_inferencia": 0,
+   "ok": true
+  },
+  {
+   "hex": "demo_nodo4.hex",
+   "tablas_identicas": {
+    "SX_ARBOL_FEAT": true,
+    "SX_ARBOL_THR": true,
+    "SX_ARBOL_IZQ": true,
+    "SX_ARBOL_DER": true,
+    "SX_ARBOL_PROB": true
+   },
+   "vectores": 50000,
+   "diferencias_inferencia": 0,
+   "ok": true
+  }
+ ],
+ "todo_ok": true
+}

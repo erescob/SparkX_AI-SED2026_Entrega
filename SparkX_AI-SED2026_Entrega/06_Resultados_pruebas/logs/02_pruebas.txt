@@ -1,0 +1,66 @@
+mkdir -p build
+gcc -std=c99 -O2 -Wall -Wextra -Wno-unused-parameter -I. -Inucleo_v2 host/test_eds.c sx_eds.c sx_adquisicion.c -o build/test_eds -lm
+mkdir -p build
+gcc -std=c99 -O2 -Wall -Wextra -Wno-unused-parameter -I. -Inucleo_v2 -DSX_TIENE_I_AT=1 host/test_eds.c sx_eds.c sx_adquisicion.c -o build/test_eds_iat -lm
+mkdir -p build
+gcc -std=c99 -O2 -Wall -Wextra -Wno-unused-parameter -I. -Inucleo_v2 host/test_deriva.c sx_uart1h.c -o build/test_deriva
+./build/test_eds
+SX_TIENE_I_AT=0
+normal                   rc=0 (esperado 0) AT_final=0 V  flyback=0 fases=0  OK
+agua al arrancar         rc=-1 (esperado -1) AT_final=0 V  flyback=0 fases=0  OK
+rocio a media limpieza   rc=-2 (esperado -2) AT_final=0 V  flyback=0 fases=0  OK
+fuga sin caida de AT     rc=0 (esperado 0) AT_final=0 V  flyback=0 fases=0  OK
+./build/test_eds_iat
+SX_TIENE_I_AT=1
+normal                   rc=0 (esperado 0) AT_final=0 V  flyback=0 fases=0  OK
+agua al arrancar         rc=-1 (esperado -1) AT_final=0 V  flyback=0 fases=0  OK
+rocio a media limpieza   rc=-2 (esperado -2) AT_final=0 V  flyback=0 fases=0  OK
+fuga sin caida de AT     rc=-2 (esperado -2) AT_final=0 V  flyback=0 fases=0  OK
+./build/test_deriva
+diferencia de reloj   tramas OK (de 200, 40 bytes c/u)
+      -7.0 %              0
+      -6.0 %              0
+      -5.0 %            188
+      -4.0 %            200
+      -3.0 %            200
+      -2.0 %            200
+      -1.0 %            200
+       0.0 %            200
+       1.0 %            200
+       2.0 %            200
+       3.0 %            200
+       4.0 %            200
+       5.0 %             76
+       6.0 %              0
+       7.0 %              0
+make sim
+make[1]: Entering directory '/home/claude/sparkx_red/firmware'
+mkdir -p build
+gcc -std=c99 -O2 -Wall -Wextra -Wno-unused-parameter -ffp-contract=off -I. -Inucleo_v2 -DSX_PASO_MS=8000u -DSX_EDS_CICLOS=15u -DSX_K0=0 \
+    host/sim_red.c nucleo_v2/sx_controlador.c sx_adquisicion.c sx_eds.c sx_red.c sx_uart1h.c sx_nodo.c -o build/sim_red -lm
+mkdir -p ../resultados/sim_red
+./build/sim_red ../datos ../resultados/sim_red
+simulación terminada: 2688 pasos, máx. limpiezas simultáneas = 1
+mkdir -p ../resultados/sim_red_completo
+SX_SIM_HW=completo ./build/sim_red ../datos ../resultados/sim_red_completo
+simulación terminada: 2688 pasos, máx. limpiezas simultáneas = 1
+cat ../resultados/sim_red/resumen.json
+{
+ "hardware": "PCB actual sin componentes nuevos",
+ "pasos": 2688, "paso_ms": 8000, "tarjetas": 6,
+ "max_limpiezas_simultaneas": 1, "ms_con_mas_de_1": 0,
+ "ticks_totales": 826368000, "ticks_simulados_bit_a_bit": 77464303,
+ "nodos": [
+  {"id":1,"alerta_eds":0,"limpiezas":34,"abortadas":0,"sin_turno":0,"inicios_eds":53,"ms_eds_con_agua":0,"eds_con_ambiente_viejo":0,"saltos":0,"padre":255,"tramas_ok":8185,"crc_malo":0,"colisiones":0,"err_marco":0,"reenviadas":0,"alerta_conector":0,"alerta_termica":0,"alerta_lavado":0,"falla_sensor":0},
+  {"id":2,"alerta_eds":1,"limpiezas":53,"abortadas":0,"sin_turno":0,"inicios_eds":53,"ms_eds_con_agua":0,"eds_con_ambiente_viejo":0,"saltos":3,"padre":2,"tramas_ok":9383,"crc_malo":0,"colisiones":0,"err_marco":0,"reenviadas":8072,"alerta_conector":0,"alerta_termica":0,"alerta_lavado":0,"falla_sensor":0},
+  {"id":3,"alerta_eds":0,"limpiezas":53,"abortadas":0,"sin_turno":0,"inicios_eds":53,"ms_eds_con_agua":0,"eds_con_ambiente_viejo":0,"saltos":4,"padre":2,"tramas_ok":5949,"crc_malo":0,"colisiones":0,"err_marco":0,"reenviadas":4672,"alerta_conector":0,"alerta_termica":0,"alerta_lavado":0,"falla_sensor":0},
+  {"id":4,"alerta_eds":0,"limpiezas":53,"abortadas":0,"sin_turno":0,"inicios_eds":53,"ms_eds_con_agua":0,"eds_con_ambiente_viejo":0,"saltos":1,"padre":0,"tramas_ok":9459,"crc_malo":0,"colisiones":0,"err_marco":0,"reenviadas":7785,"alerta_conector":0,"alerta_termica":0,"alerta_lavado":0,"falla_sensor":0},
+  {"id":5,"alerta_eds":0,"limpiezas":53,"abortadas":0,"sin_turno":0,"inicios_eds":53,"ms_eds_con_agua":0,"eds_con_ambiente_viejo":0,"saltos":2,"padre":3,"tramas_ok":9941,"crc_malo":0,"colisiones":0,"err_marco":0,"reenviadas":6572,"alerta_conector":0,"alerta_termica":0,"alerta_lavado":0,"falla_sensor":0},
+  {"id":6,"alerta_eds":0,"limpiezas":53,"abortadas":0,"sin_turno":0,"inicios_eds":53,"ms_eds_con_agua":0,"eds_con_ambiente_viejo":0,"saltos":3,"padre":3,"tramas_ok":5916,"crc_malo":0,"colisiones":0,"err_marco":0,"reenviadas":4141,"alerta_conector":0,"alerta_termica":0,"alerta_lavado":0,"falla_sensor":0}
+ ]
+}
+make[1]: Leaving directory '/home/claude/sparkx_red/firmware'
+
+real	0m34.700s
+user	0m33.063s
+sys	0m0.166s
